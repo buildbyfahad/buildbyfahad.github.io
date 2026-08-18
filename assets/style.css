@@ -52,7 +52,7 @@ h1,h2,h3,h4,.brand,.num,.stats dd,.step-n{font-family:"Space Grotesk",Inter,sans
   box-shadow:0 0 0 0 rgba(63,185,80,.6);animation:pulse 2.4s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(63,185,80,0)}100%{box-shadow:0 0 0 0 rgba(63,185,80,0)}}
 .title{font-size:clamp(2.6rem,7.2vw,5.2rem);line-height:1;letter-spacing:-.035em;font-weight:700;margin:0 0 1.4rem}
-.line{display:block;overflow:hidden}
+.line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 .line>span{display:block;transform:translateY(105%);animation:rise .95s cubic-bezier(.2,.7,.2,1) forwards}
 .line:nth-child(2)>span{animation-delay:.10s}
 .line:nth-child(3)>span{animation-delay:.20s}
