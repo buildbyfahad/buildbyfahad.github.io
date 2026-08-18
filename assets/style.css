@@ -130,7 +130,9 @@ section{padding:clamp(3.5rem,9vh,6.5rem) 0}
   width:6px;height:6px;border-radius:50%;background:var(--a1);opacity:.8}
 .bullets{margin-bottom:1.2rem}
 .tags{list-style:none;display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.2rem;padding:0}
-.tags li{font-size:.79rem;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:.24rem .7rem}
+.tags li{font-size:.79rem;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;
+  padding:.24rem .7rem;display:inline-flex;align-items:center;gap:.4rem;line-height:1.5}
+.tags li svg{width:13px;height:13px;flex:none;opacity:.92}
 .card-links{margin-top:auto;display:flex;gap:1.3rem}
 .card-link{text-decoration:none;font-weight:500;font-size:.94rem;color:var(--a1)}
 .card-link:hover{text-decoration:underline}
@@ -155,6 +157,7 @@ section{padding:clamp(3.5rem,9vh,6.5rem) 0}
 .stack-col h4{margin:0 0 .9rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:500}
 .big-tags{margin:0}
 .big-tags li{font-size:.88rem;padding:.4rem .9rem;background:var(--card);color:var(--fg)}
+.big-tags li svg{width:15px;height:15px}
 
 /* process */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;counter-reset:s}
@@ -205,7 +208,9 @@ footer p{margin:0}
 /* hero chips */
 .hero-chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:2.1rem 0 0;padding:0}
 .hero-chips li{font-size:.82rem;color:var(--muted);background:var(--card);
-  border:1px solid var(--line-2);border-radius:999px;padding:.32rem .85rem}
+  border:1px solid var(--line-2);border-radius:999px;padding:.32rem .85rem;
+  display:inline-flex;align-items:center;gap:.45rem;line-height:1.5}
+.hero-chips li svg{width:14px;height:14px;flex:none;opacity:.95}
 .lede strong{color:var(--fg);font-weight:600}
 
 /* category badge on project cards */
