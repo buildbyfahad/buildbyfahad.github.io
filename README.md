@@ -18,23 +18,32 @@
 ## About
 
 A single-page portfolio covering the products I've shipped — web platforms, cross-platform
-mobile apps and the tools built around them — with a filterable project grid, a categorised
-tech stack, and a contact section.
+mobile and TV apps, and the tools built around them — with a filterable project grid, a
+categorised tech stack, and a contact section. Sections run hero → about → work → services
+→ stack → experience → process → contact, so the proof comes before the pitch.
 
 Hand-written HTML, CSS and vanilla JavaScript. **No framework, no build step, no
 dependencies, no bundler.** Clone it and open `index.html`.
 
 ## Highlights
 
-- **Filterable project grid** — All / Web / Mobile app / Backend / npm package, driven by
-  `data-cat` attributes; projects can belong to more than one category
+- **Light and dark themes** — a token-based palette swapped by `data-theme` on the root,
+  seeded from `prefers-color-scheme`, persisted in `localStorage`, and applied by an inline
+  head script so there is no flash of the wrong theme
+- **Filterable project grid** — All / Web / Mobile app / TV app / Backend / npm package,
+  driven by `data-cat` attributes; projects can belong to more than one category
 - **88 inline brand logos** from [simple-icons](https://simpleicons.org), colour-corrected so
   dark brand marks stay legible on a dark background without losing their hue
-- **Animated hero** — staggered line reveal, drifting gradient mesh, count-up statistics
+- **Animated hero** — gradient name with a clip-path wipe, a rotating list of role titles,
+  a drifting gradient mesh and count-up statistics
+- **Sticky glass nav** — scroll-progress bar, `IntersectionObserver` section highlighting,
+  and a full mobile menu behind a hamburger
 - **Scroll reveals** via `IntersectionObserver`, with a no-JS fallback so content is never
   hidden if scripting fails
 - **Fully responsive** — four-column grids collapse in stages; the hero portrait becomes a
-  compact identity row on phones
+  compact identity row on phones; nav links move into a sheet below 900px
+- **Pointer-tracked card spotlight** — a radial highlight follows the cursor across cards,
+  skipped entirely on touch and reduced-motion
 - **Accessible** — `prefers-reduced-motion` disables every animation, filter tabs use
   `role="tablist"` with `aria-selected`, hidden cards use the `hidden` attribute so screen
   readers skip them
@@ -45,13 +54,14 @@ dependencies, no bundler.** Clone it and open `index.html`.
 |---|---|
 | **Markup** | Semantic HTML5 |
 | **Styling** | CSS custom properties, Grid, Flexbox, `clamp()` fluid type |
-| **Scripting** | Vanilla JS — `IntersectionObserver`, no libraries |
+| **Scripting** | Vanilla JS — `IntersectionObserver`, `matchMedia`, no libraries |
 | **Type** | [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) + [Inter](https://fonts.google.com/specimen/Inter) |
 | **Icons** | [simple-icons](https://simpleicons.org), inlined as SVG |
 | **Hosting** | GitHub Pages |
 
-Palette follows GitHub's dark theme — `#0D1117` background, `#161B22` surfaces,
-`#58A6FF` accent.
+The dark palette follows GitHub's — `#0D1117` background, `#161B22` surfaces, `#58A6FF`
+accent shading into `#A371F7`. The light palette re-points the same tokens at `#FBFCFE`
+surfaces with a deeper `#0B64D6` accent, and `color-mix()` derives every tint from them.
 
 ## Performance
 
@@ -73,10 +83,10 @@ compress to roughly a quarter of their size.
 
 ```
 .
-├── index.html          # every section — hero, services, stack, work, process, about, contact
+├── index.html          # every section — hero, about, work, services, stack, experience, process, contact
 ├── assets/
 │   ├── style.css       # design tokens, layout, responsive breakpoints
-│   ├── main.js         # scroll reveals, count-up stats, project filter
+│   ├── main.js         # theme toggle, mobile menu, scroll spy, reveals, stats, filter, rotator
 │   └── profile.jpg     # portrait
 ├── .nojekyll           # bypass Jekyll processing
 └── README.md
