@@ -105,6 +105,7 @@ section{padding:clamp(3.5rem,9vh,6.5rem) 0}
 /* cards */
 .cards{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem;grid-template-columns:repeat(2,1fr)}
 .cards.three{grid-template-columns:repeat(3,1fr)}
+.cards.four{grid-template-columns:repeat(4,1fr)}
 .card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);
   background:var(--card);padding:1.8rem;display:flex;flex-direction:column;
   transition:transform .28s,border-color .28s}
@@ -133,7 +134,7 @@ section{padding:clamp(3.5rem,9vh,6.5rem) 0}
 .muted-link{color:var(--muted)}
 
 /* stack */
-.stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem 2.4rem}
 .stack-col h4{margin:0 0 .9rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:500}
 .big-tags{margin:0}
 .big-tags li{font-size:.88rem;padding:.4rem .9rem;background:var(--card);color:var(--fg)}
@@ -183,13 +184,25 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;
   padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.87rem}
 footer p{margin:0}
 
+
+/* hero chips */
+.hero-chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:2.1rem 0 0;padding:0}
+.hero-chips li{font-size:.82rem;color:var(--muted);background:var(--card);
+  border:1px solid var(--line-2);border-radius:999px;padding:.32rem .85rem}
+.lede strong{color:var(--fg);font-weight:600}
+
+/* category badge on project cards */
+.badge-sm{margin-right:auto;margin-left:.9rem;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:600;color:var(--a1);background:rgba(245,158,11,.12);
+  border:1px solid rgba(245,158,11,.32);border-radius:999px;padding:.2rem .65rem}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
 /* responsive */
 @media(max-width:1000px){
-  .cards.three,.steps{grid-template-columns:repeat(2,1fr)}
+  .cards.three,.cards.four,.steps{grid-template-columns:repeat(2,1fr)}
   .stack-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:860px){
@@ -205,7 +218,7 @@ footer p{margin:0}
 @media(max-width:560px){
   :root{--shell:calc(100% - 2.2rem)}
   .nav-links a:not(.nav-cta){display:none}
-  .cards.three,.steps,.stack-grid{grid-template-columns:1fr}
+  .cards.three,.cards.four,.steps,.stack-grid{grid-template-columns:1fr}
   .btn{width:100%;justify-content:center}
   .cta-row{width:100%}
   .card{padding:1.4rem}
