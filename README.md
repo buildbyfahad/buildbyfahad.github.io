@@ -1,6 +1,6 @@
-# buidbyfahad.github.io
+# buildbyFahad.github.io
 
-Personal site, served by GitHub Pages at <https://buidbyfahad.github.io>.
+Personal site, served by GitHub Pages at <https://buildbyfahad.github.io>.
 
 Plain HTML and CSS — no build step, no dependencies.
 
