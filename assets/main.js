@@ -28,3 +28,29 @@ const counted = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('.stats dd[data-count]').forEach(el => counted.observe(el));
+
+// project category filter
+(() => {
+  const grid = document.getElementById('project-grid');
+  if (!grid) return;
+  const buttons = document.querySelectorAll('.filter');
+  const cards = [...grid.querySelectorAll('[data-cat]')];
+
+  const apply = (want) => {
+    cards.forEach(c => {
+      const show = want === 'all' || c.dataset.cat.split(' ').includes(want);
+      c.hidden = !show;
+      // the featured card only spans full width while everything is shown
+      c.classList.toggle('span-off', want !== 'all');
+    });
+  };
+
+  buttons.forEach(btn => btn.addEventListener('click', () => {
+    buttons.forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', String(on));
+    });
+    apply(btn.dataset.filter);
+  }));
+})();

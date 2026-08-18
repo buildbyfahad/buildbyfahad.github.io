@@ -30,7 +30,6 @@
     <a href="#services">Services</a>
     <a href="#stack">Stack</a>
     <a href="#work">Work</a>
-    <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </div>
@@ -179,12 +178,21 @@
 
   <section id="work" class="shell reveal">
     <div class="sec-head">
-      <p class="kicker">Production</p>
-      <h2>Live products</h2>
-      <p class="sec-sub">Shipped software with real users — on the web and in the app stores.</p>
+      <p class="kicker">Portfolio</p>
+      <h2>Selected work</h2>
+      <p class="sec-sub">Products in the app stores, platforms on the web, and the tools I build around them.</p>
     </div>
-    <ul class="cards">
-      <li class="card featured">
+
+    <div class="filters" role="tablist" aria-label="Filter projects by category">
+      <button class="filter is-active" role="tab" aria-selected="true"  data-filter="all">All <span>10</span></button>
+      <button class="filter"           role="tab" aria-selected="false" data-filter="web">Web <span>4</span></button>
+      <button class="filter"           role="tab" aria-selected="false" data-filter="mobile">Mobile app <span>5</span></button>
+      <button class="filter"           role="tab" aria-selected="false" data-filter="backend">Backend <span>1</span></button>
+      <button class="filter"           role="tab" aria-selected="false" data-filter="npm">npm package <span>1</span></button>
+    </div>
+
+    <ul class="cards" id="project-grid">
+      <li class="card featured" data-cat="web mobile">
         <div class="card-top"><span class="num">01</span><span class="badge-sm">Web + Mobile app</span><span class="year">Live</span></div>
         <h3>Queryloom — AI Social Network</h3>
         <p>A social platform where every post is fact-checked the moment it's published, shown from multiple political angles, and enriched with AI insights and sources. Built as a Next.js web app plus native Android and iOS apps from one React Native codebase, all sharing a single backend.</p>
@@ -202,7 +210,7 @@
         </div>
       </li>
 
-      <li class="card">
+      <li class="card" data-cat="mobile">
         <div class="card-top"><span class="num">02</span><span class="badge-sm">Mobile app</span><span class="year">Live</span></div>
         <h3>SahayPay — Digital Wallet</h3>
         <p>A fintech wallet for bill payments, mobile top-ups, in-person payments and fund transfers, with customer, agent and merchant roles served from a single codebase shipped to both Android and iOS.</p>
@@ -213,88 +221,85 @@
         </div>
       </li>
 
-      <li class="card">
+      <li class="card" data-cat="mobile">
         <div class="card-top"><span class="num">03</span><span class="badge-sm">Mobile app</span><span class="year">Live</span></div>
         <h3>Rise.TV — Streaming Platform</h3>
-        <p>An independent streaming app for an audience of 400+ on-demand videos plus weekly live shows. Built for Android and iOS, with video playback, live streaming and subscriber access handled on both platforms.</p>
+        <p>An independent streaming app serving 400+ on-demand videos plus weekly live shows. Built for Android and iOS, with video playback, live streaming and subscriber access handled on both platforms.</p>
         <ul class="tags"><li>React Native</li><li>Android</li><li>iOS</li><li>Streaming</li><li>Video</li></ul>
         <div class="card-links">
           <a class="card-link" href="https://play.google.com/store/apps/details?id=com.maz.combo3403">Google Play <span aria-hidden="true">↗</span></a>
           <a class="card-link muted-link" href="https://apps.apple.com/us/app/rise-tv/id6466627994">App Store <span aria-hidden="true">↗</span></a>
         </div>
       </li>
-    </ul>
-  </section>
 
-  <section id="projects" class="shell reveal">
-    <div class="sec-head">
-      <p class="kicker">Open source</p>
-      <h2>Personal projects</h2>
-      <p class="sec-sub">Things I build on my own time to try ideas and keep sharp — all public on GitHub.</p>
-    </div>
-
-    <h3 class="cat">Web</h3>
-    <ul class="cards">
-      <li class="card">
-        <div class="card-top"><span class="num">01</span><span class="year">In development</span></div>
+      <li class="card" data-cat="web">
+        <div class="card-top"><span class="num">04</span><span class="badge-sm">Web</span><span class="year">In development</span></div>
         <h3>Nexora — AI Business Operating System</h3>
         <p>A multi-tenant platform for small companies that works your data instead of just storing it: leads arrive scored with the reasoning attached, deals carry a live win probability, and the forecast is weighted by what actually closes.</p>
         <ul class="tags"><li>Next.js</li><li>NestJS</li><li>TypeScript</li><li>PostgreSQL</li></ul>
-        <div class="card-links"><a class="card-link" href="https://github.com/buildbyfahad/Nexora">View on GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/buildbyfahad/Nexora">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
       </li>
-      <li class="card">
-        <div class="card-top"><span class="num">02</span><span class="year">2026</span></div>
-        <h3>Urban Tandoor</h3>
-        <p>A restaurant site built for a premium feel — menu presentation, brand-led layout, and a fast responsive front end.</p>
-        <ul class="tags"><li>React</li><li>TanStack Start</li><li>Tailwind</li></ul>
-        <div class="card-links"><a class="card-link" href="https://github.com/buildbyfahad/urban-tandoor-premium-build">View on GitHub <span aria-hidden="true">↗</span></a></div>
-      </li>
-      <li class="card">
-        <div class="card-top"><span class="num">03</span><span class="year">2026</span></div>
-        <h3>Glow Beauty Studio</h3>
-        <p>A booking-oriented site for a beauty studio in Surat — services, gallery and enquiry flow on a clean responsive layout.</p>
-        <ul class="tags"><li>React</li><li>TanStack Start</li><li>Tailwind</li></ul>
-        <div class="card-links"><a class="card-link" href="https://github.com/buildbyfahad/glow-beauty-studio-surat">View on GitHub <span aria-hidden="true">↗</span></a></div>
-      </li>
-    </ul>
 
-    <h3 class="cat">Mobile app</h3>
-    <ul class="cards">
-      <li class="card">
-        <div class="card-top"><span class="num">04</span><span class="year">2026</span></div>
-        <h3>Vesta — E-Commerce App</h3>
-        <p>A cross-platform shopping app built with Expo and React Native: authentication with a route guard, product catalog with search and filtering, wishlist, cart and checkout behind a theme-aware UI.</p>
-        <ul class="tags"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Android</li><li>iOS</li></ul>
-        <div class="card-links"><a class="card-link" href="https://github.com/buildbyfahad/Vesta">View on GitHub <span aria-hidden="true">↗</span></a></div>
-      </li>
-      <li class="card">
-        <div class="card-top"><span class="num">05</span><span class="year">2026</span></div>
-        <h3>Calculator</h3>
-        <p>A small Flutter build — a chance to work outside the React Native toolchain and compare how the two approach layout and state.</p>
-        <ul class="tags"><li>Flutter</li><li>Dart</li><li>Android</li><li>iOS</li></ul>
-        <div class="card-links"><a class="card-link" href="https://github.com/buildbyfahad/calculator">View on GitHub <span aria-hidden="true">↗</span></a></div>
-      </li>
-    </ul>
-
-    <h3 class="cat">Backend</h3>
-    <ul class="cards">
-      <li class="card featured">
-        <div class="card-top"><span class="num">06</span><span class="year">2026</span></div>
+      <li class="card" data-cat="backend">
+        <div class="card-top"><span class="num">05</span><span class="badge-sm">Backend</span><span class="year">2026</span></div>
         <h3>E-Commerce REST API</h3>
         <p>A production-ready commerce API with JWT authentication, Stripe payments, Zod request validation, Swagger documentation and a Docker setup for consistent deploys.</p>
         <ul class="tags"><li>TypeScript</li><li>Express 5</li><li>MongoDB</li><li>Stripe</li><li>Docker</li><li>Swagger</li></ul>
-        <div class="card-links"><a class="card-link" href="https://github.com/buildbyfahad/ecommerce-backend">View on GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/buildbyfahad/ecommerce-backend">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
       </li>
-    </ul>
 
-    <h3 class="cat">npm package</h3>
-    <ul class="cards">
-      <li class="card featured">
-        <div class="card-top"><span class="num">07</span><span class="year">2026</span></div>
+      <li class="card" data-cat="npm">
+        <div class="card-top"><span class="num">06</span><span class="badge-sm">npm package</span><span class="year">2026</span></div>
         <h3>rn-newarch-check</h3>
         <p>A zero-dependency CLI that tells you which React Native libraries will break before you migrate to the New Architecture. It reads the version your lockfile actually resolved — not the optimistic range in package.json — so the answer holds up in CI.</p>
         <ul class="tags"><li>Node.js</li><li>JavaScript</li><li>CLI</li><li>React Native</li></ul>
-        <div class="card-links"><a class="card-link" href="https://github.com/buildbyfahad/rn-newarch-check">View on GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/buildbyfahad/rn-newarch-check">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </li>
+
+      <li class="card" data-cat="mobile">
+        <div class="card-top"><span class="num">07</span><span class="badge-sm">Mobile app</span><span class="year">2026</span></div>
+        <h3>Vesta — E-Commerce App</h3>
+        <p>A cross-platform shopping app built with Expo and React Native: authentication with a route guard, product catalog with search and filtering, wishlist, cart and checkout behind a theme-aware UI.</p>
+        <ul class="tags"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Android</li><li>iOS</li></ul>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/buildbyfahad/Vesta">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </li>
+
+      <li class="card" data-cat="web">
+        <div class="card-top"><span class="num">08</span><span class="badge-sm">Web</span><span class="year">2026</span></div>
+        <h3>Urban Tandoor</h3>
+        <p>A restaurant site built for a premium feel — menu presentation, brand-led layout, and a fast responsive front end.</p>
+        <ul class="tags"><li>React</li><li>TanStack Start</li><li>Tailwind</li></ul>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/buildbyfahad/urban-tandoor-premium-build">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </li>
+
+      <li class="card" data-cat="web">
+        <div class="card-top"><span class="num">09</span><span class="badge-sm">Web</span><span class="year">2026</span></div>
+        <h3>Glow Beauty Studio</h3>
+        <p>A booking-oriented site for a beauty studio in Surat — services, gallery and enquiry flow on a clean responsive layout.</p>
+        <ul class="tags"><li>React</li><li>TanStack Start</li><li>Tailwind</li></ul>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/buildbyfahad/glow-beauty-studio-surat">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </li>
+
+      <li class="card" data-cat="mobile">
+        <div class="card-top"><span class="num">10</span><span class="badge-sm">Mobile app</span><span class="year">2026</span></div>
+        <h3>Calculator</h3>
+        <p>A small Flutter build for Android and iOS — a chance to work outside the React Native toolchain and compare how the two approach layout and state.</p>
+        <ul class="tags"><li>Flutter</li><li>Dart</li><li>Android</li><li>iOS</li></ul>
+        <div class="card-links">
+          <a class="card-link" href="https://github.com/buildbyfahad/calculator">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
       </li>
     </ul>
   </section>
