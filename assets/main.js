@@ -54,3 +54,7 @@ document.querySelectorAll('.stats dd[data-count]').forEach(el => counted.observe
     apply(btn.dataset.filter);
   }));
 })();
+
+// hero intro — CSS drives it, but never let the copy sit at opacity 0 if
+// animations are dropped (throttled tab, headless render, odd browser)
+setTimeout(() => document.body.classList.add('hero-ready'), 2200);
