@@ -73,7 +73,7 @@ h1,h2,h3,h4,.brand,.num,.stats dd,.step-n{font-family:"Space Grotesk",Inter,sans
 
 /* portrait */
 .portrait{margin:0;position:relative;justify-self:center}
-.portrait-frame{position:relative;width:min(340px,74vw);aspect-ratio:1;border-radius:28px;overflow:hidden;
+.portrait-frame{position:relative;width:min(360px,74vw);aspect-ratio:1;border-radius:36px;overflow:hidden;
   border:1px solid var(--line-2);
   box-shadow:0 30px 70px -30px rgba(88,166,255,.55),0 0 0 1px rgba(255,255,255,.03) inset;
   animation:float 7s ease-in-out infinite}
@@ -211,7 +211,7 @@ footer p{margin:0}
 @media(max-width:860px){
   .hero-grid{grid-template-columns:1fr;gap:1.9rem}
   .portrait{order:-1;justify-self:stretch;display:flex;align-items:center;gap:1rem}
-  .portrait-frame{width:84px;flex:0 0 84px;border-radius:18px;animation:none;
+  .portrait-frame{width:88px;flex:0 0 88px;border-radius:22px;animation:none;
     box-shadow:0 10px 26px -14px rgba(88,166,255,.7)}
   .portrait-tag{position:static;transform:none;display:flex;align-items:flex-start;
     background:none;border:0;box-shadow:none;padding:0;gap:.15rem}
