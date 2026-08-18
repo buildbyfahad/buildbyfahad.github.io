@@ -7,7 +7,7 @@
 :root{
   color-scheme:dark;
   --bg:#0d1117; --bg-2:#161b22; --surface:#161b22; --card:#161b22;
-  --fg:#f0f6fc; --muted:#9198a1; --muted-2:#6e7681;
+  --fg:#f0f6fc; --muted:#a7b0bb; --muted-2:#7d8895;
   --line:#21262d; --line-2:#30363d;
   --a1:#58a6ff; --a2:#79c0ff; --v:#a371f7; --on-accent:#0b1220;
   --ok:#3fb950;
@@ -18,7 +18,8 @@
   --shadow-1:0 1px 2px rgba(0,0,0,.35);
   --shadow-2:0 18px 40px -24px rgba(0,0,0,.9);
   --shadow-3:0 30px 70px -30px color-mix(in srgb,var(--a1) 45%,transparent);
-  --blob-o:.42; --grid-o:.45;
+  --blob-o:.30; --grid-o:.5;
+  --veil:color-mix(in srgb,var(--bg) 52%,transparent);
 
   --shell:min(1180px,100% - 3rem);
   --r:18px; --r-lg:26px;
@@ -29,21 +30,22 @@
 :root[data-theme="light"]{
   color-scheme:light;
   --bg:#fbfcfe; --bg-2:#ffffff; --surface:#ffffff; --card:#ffffff;
-  --fg:#0b1220; --muted:#59636e; --muted-2:#7b858f;
-  --line:#e6eaef; --line-2:#d4dae2;
+  --fg:#0b1220; --muted:#4d5761; --muted-2:#6d7883;
+  --line:#c3cdda; --line-2:#aeb9c7; --grid-line:#eaeef4;
   --a1:#0b64d6; --a2:#2f81f7; --v:#7c3aed; --on-accent:#ffffff;
   --ok:#1a7f37;
   --shadow-1:0 1px 2px rgba(16,24,40,.06);
   --shadow-2:0 18px 40px -26px rgba(16,24,40,.35);
   --shadow-3:0 30px 70px -34px color-mix(in srgb,var(--a1) 40%,transparent);
   --glass:color-mix(in srgb,#ffffff 78%,transparent);
-  --blob-o:.16; --grid-o:.75;
+  --veil:color-mix(in srgb,#fff 72%,transparent);
+  --blob-o:.14; --grid-o:.4;
 }
 
 /* ---------- base ---------- */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);
+body{margin:0;position:relative;background:var(--bg);color:var(--fg);
   font:400 16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
   transition:background .35s var(--ease),color .35s var(--ease)}
@@ -67,16 +69,19 @@ section,header[id]{scroll-margin-top:calc(var(--nav-h) + 1rem)}
 :root[data-theme="light"] svg[fill="#ECE8D1"]{fill:#1b2129}
 
 /* ---------- backdrop ---------- */
-.mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;
-  background:radial-gradient(120% 90% at 50% -10%,var(--bg-2) 0%,var(--bg) 62%)}
-.blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:var(--blob-o)}
-.b1{width:46vw;height:46vw;background:var(--a1);top:-14vw;left:-8vw;animation:drift 24s ease-in-out infinite}
-.b2{width:38vw;height:38vw;background:var(--v);top:26vw;right:-12vw;opacity:calc(var(--blob-o) * .62);animation:drift 29s ease-in-out infinite reverse}
-.b3{width:34vw;height:34vw;background:var(--a2);top:78vw;left:12vw;opacity:calc(var(--blob-o) * .4);animation:drift 35s ease-in-out infinite}
+.mesh{position:absolute;top:0;left:0;right:0;height:min(1200px,135vh);z-index:-1;overflow:hidden;
+  background:radial-gradient(120% 90% at 50% -10%,var(--bg-2) 0%,var(--bg) 62%);
+  mask-image:linear-gradient(#000 62%,transparent 100%);
+  -webkit-mask-image:linear-gradient(#000 62%,transparent 100%)}
+.mesh::after{content:"";position:absolute;inset:0;background:var(--veil)}
+.blob{position:absolute;border-radius:50%;filter:blur(120px);opacity:var(--blob-o)}
+.b1{width:46vw;height:46vw;background:var(--a1);top:-16vw;left:-8vw;animation:drift 24s ease-in-out infinite}
+.b2{width:38vw;height:38vw;background:var(--v);top:2vw;right:-12vw;opacity:calc(var(--blob-o) * .72);animation:drift 29s ease-in-out infinite reverse}
+.b3{width:34vw;height:34vw;background:var(--a2);top:34vw;left:18vw;opacity:calc(var(--blob-o) * .5);animation:drift 35s ease-in-out infinite}
 @keyframes drift{0%,100%{transform:translate3d(0,0,0) scale(1)}
   33%{transform:translate3d(6vw,4vw,0) scale(1.12)}66%{transform:translate3d(-5vw,7vw,0) scale(.92)}}
 .grid{position:absolute;inset:0;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
   background-size:64px 64px;opacity:var(--grid-o);
   mask-image:radial-gradient(80% 55% at 50% 0%,#000,transparent 75%);
   -webkit-mask-image:radial-gradient(80% 55% at 50% 0%,#000,transparent 75%)}
