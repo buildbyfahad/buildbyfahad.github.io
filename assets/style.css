@@ -115,7 +115,10 @@ section{padding:clamp(3.5rem,9vh,6.5rem) 0}
 .card:hover{transform:translateY(-5px);border-color:rgba(245,158,11,.5)}
 .card:hover::before{opacity:1}
 .card>*{position:relative}
-.ico{font-size:1.6rem;color:var(--a1);line-height:1;margin-bottom:.9rem}
+.ico{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
+  border-radius:13px;color:var(--a1);margin-bottom:1.1rem;
+  background:rgba(245,158,11,.11);border:1px solid rgba(245,158,11,.28)}
+.ico svg{width:22px;height:22px}
 .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
 .num{font-weight:700;font-size:.85rem;letter-spacing:.1em;color:var(--a1)}
 .year{font-size:.82rem;color:var(--muted)}
@@ -206,17 +209,30 @@ footer p{margin:0}
   .stack-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:860px){
-  .hero-grid{grid-template-columns:1fr;gap:3rem}
-  .portrait{order:-1;justify-self:start}
-  .portrait-frame{width:min(230px,55vw);animation:none}
-  .portrait-tag{left:auto;right:-.5rem;transform:none}
-  .stats{grid-template-columns:repeat(2,1fr);gap:1.6rem}
+  .hero-grid{grid-template-columns:1fr;gap:1.9rem}
+  .portrait{order:-1;justify-self:stretch;display:flex;align-items:center;gap:1rem}
+  .portrait-frame{width:84px;flex:0 0 84px;border-radius:18px;animation:none;
+    box-shadow:0 10px 26px -14px rgba(245,158,11,.7)}
+  .portrait-tag{position:static;transform:none;display:flex;align-items:flex-start;
+    background:none;border:0;box-shadow:none;padding:0;gap:.15rem}
+  .portrait-tag strong{font-size:1.15rem}
+  .portrait-tag span{font-size:.85rem}
+  .stats{grid-template-columns:repeat(2,1fr);gap:1.4rem 1rem;margin-top:2.6rem;padding-top:1.5rem}
+  .hero{padding-top:1.5rem}
   .cards{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr;gap:2rem}
   .timeline li{grid-template-columns:1fr;gap:.6rem}
 }
 @media(max-width:560px){
   :root{--shell:calc(100% - 2.2rem)}
+  section{padding:2.6rem 0}
+  .sec-head{margin-bottom:1.6rem}
+  .title{font-size:clamp(2.3rem,10.5vw,3rem)}
+  .lede{font-size:1rem;margin-bottom:1.6rem}
+  .hero-chips{margin-top:1.5rem}
+  .cards{gap:.9rem}
+  .timeline li{padding:1.3rem 0}
+  .contact-card{padding:2.2rem 1.2rem}
   .nav-links a:not(.nav-cta){display:none}
   .cards.three,.cards.four,.steps,.stack-grid{grid-template-columns:1fr}
   .btn{width:100%;justify-content:center}
