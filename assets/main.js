@@ -58,3 +58,21 @@ document.querySelectorAll('.stats dd[data-count]').forEach(el => counted.observe
 // hero intro — CSS drives it, but never let the copy sit at opacity 0 if
 // animations are dropped (throttled tab, headless render, odd browser)
 setTimeout(() => document.body.classList.add('hero-ready'), 2200);
+
+// hero role rotator — cycles the job titles under the name
+(() => {
+  const track = document.querySelector('.roles-track');
+  if (!track || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = [...track.children];
+  if (items.length < 2) return;
+  track.appendChild(items[0].cloneNode(true));   // clone for a seamless wrap
+  let i = 0;
+  setInterval(() => {
+    i++;
+    track.style.transition = 'transform .55s cubic-bezier(.4,0,.2,1)';
+    track.style.transform = `translateY(-${i * items[0].offsetHeight}px)`;
+    if (i === items.length) {
+      setTimeout(() => { track.style.transition = 'none'; track.style.transform = 'translateY(0)'; i = 0; }, 570);
+    }
+  }, 2200);
+})();
