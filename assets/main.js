@@ -1,7 +1,11 @@
 // year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// scroll reveal
+// scroll reveal — with a hard fallback so content can never stay hidden
+const revealAll = () => document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+if (!('IntersectionObserver' in window)) { revealAll(); }
+setTimeout(revealAll, 3000);
+
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
