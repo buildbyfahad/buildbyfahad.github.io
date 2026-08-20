@@ -212,7 +212,8 @@ section{padding:var(--step) 0;counter-increment:sec}
 .kicker{display:flex;align-items:center;gap:.6rem;color:var(--a1);font-size:.78rem;text-transform:uppercase;
   letter-spacing:.14em;font-weight:600;margin:0 0 .7rem}
 .kicker::before{content:counter(sec,decimal-leading-zero);color:var(--muted-2);font-variant-numeric:tabular-nums}
-.sec-head h2{font-size:clamp(1.65rem,3.4vw,2.4rem);letter-spacing:-.03em;margin:0 0 .55rem;line-height:1.12}
+.kicker::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line-2),transparent);max-width:9rem}
+.sec-head h2{font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.035em;margin:0 0 .55rem;line-height:1.08}
 .sec-sub{color:var(--muted);margin:0;font-size:1.02rem}
 
 /* ---------- cards ---------- */
